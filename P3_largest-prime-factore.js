@@ -7,7 +7,7 @@ What is the largest prime factor of the given number?
 */
 
 function largestPrimeFactor(number) {
-  const primeFactors = [2];
+  const primeFactors = [];
   // largest possible factor is number
   const sqrt = Math.floor(Math.sqrt(number));
 
@@ -24,8 +24,7 @@ function largestPrimeFactor(number) {
       isPrimeFactor && primeFactors.push(i);
     }
   }
-  if (primeFactors.length === 1 && number % primeFactors[0] !== 0)
-    return number;
+  if (!primeFactors.length) return number;
   return primeFactors[primeFactors.length - 1];
 }
 
@@ -33,12 +32,12 @@ function largestPrimeFactor(number) {
 
 // console.log(largestPrimeFactor(3)); // should return 3.
 
-console.log(largestPrimeFactor(5)); // should return 5.
+console.log(largestPrimeFactor(9)); // should return 5.
 
-// largestPrimeFactor(7) // should return 7.
+console.log(largestPrimeFactor(7)); // should return 7.
 
 console.log(largestPrimeFactor(8)); // should return 2.
 
 console.log(largestPrimeFactor(13195)); // should return 29.
 
-// largestPrimeFactor(600851475143) // should return 6857
+console.log(largestPrimeFactor(600851475143)); // should return 6857
